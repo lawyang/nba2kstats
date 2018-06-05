@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css" />
+    <script src="vendors/angular.min.js"></script>
+    <script src="scripts/client.js"></script>
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1>KOD 2K18</h1>
+            <p>Basketball, Family, Life</p>
+        </div>
+    </div>
+
+    <div id="nba" ng-app="myNba">
+        <div ng-controller="nbaController as nc">
+                <div class="container-fluid text-center">    
+                        <div class="row content">
+                          <div class="col-sm-2 sidenav">
+                            <p><a href="#"></a></p>
+                            <p><a href="#"></a></p>
+                            <p><a href="#"></a></p>
+                          </div>
+                          <div class="col-sm-8 text-left"> 
+                            <form ng-submit="nc.addPlayer()">
+
+                            <h3>Add Player Stats</h3>
+                            <input type="text" ng-model="nc.player" placeholder="name">
+                            <input type="text" ng-model="nc.archetype" placeholder="archetype">
+                            <input type="number" ng-model="nc.twopoints" placeholder="twopoints">
+                            <input type="number" ng-model="nc.threepoints" placeholder="threepoints">
+                            <input type="number" ng-model="nc.rebounds" placeholder="rebounds">
+                            <input type="number" ng-model="nc.assists" placeholder="assists">
+                            <input type="number" ng-model="nc.steals" placeholder="steals">
+                            <input type="number" ng-model="nc.blocks" placeholder="blocks">
+                            <button ng-click="form">Add Player</button>
+                            <h1>Player Stats</h1>
+                            <table id="mainTable" class="table table-striped">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Player</th>
+                                        <th>Archetype</th>
+                                        <th>PPG</th>
+                                        <th>2PM </th>
+                                        <th>3PM</th>
+                                        <th>Rebs</th>
+                                        <th>AST</th>
+                                        <th>Steals</th>
+                                        <th>Blocks</th>
+                                        <th>points</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="player in nc.toDisplayArray">
+                                        <td>{{playe.player}}</td>
+                                        <td>{{player.archetype}}</td>
+                                        <td>{{player.twopoints}}</td>
+                                        <td>{{player.threepoints}}</td>
+                                        <td>{{player.rebounds}}</td>
+                                        <td>{{player.assists}}</td>
+                                        <td>{{player.steals}}</td>
+                                        <td>{{player.blocks}}</td>
+                                        <td>{{player.points}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                          </div>
+                          <div class="col-sm-2 sidenav">
+                            <div class="well">
+                              <p></p>
+                            </div>
+                            <div class="well">
+                              <p></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+        
+        
+        
+        
+        </div>
+    </div>
+
+</body>
+
+</html>
